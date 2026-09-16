@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>In the Hold of Destiny — K. T. Tran — KL Art Gallery</title>
+  <style>
+    /* --- KL Art Gallery color palette (update these to match the live site) --- */
+    :root {
+      --color-bg: #faf9f6;           /* warm off-white page background */
+      --color-card: #ffffff;         /* content cards */
+      --color-text: #3a3a3a;         /* body text */
+      --color-heading: #1f1f1f;      /* headings */
+      --color-muted: #6e6e6e;        /* secondary text */
+      --color-accent: #bfa05a;       /* links, buttons, active tab underline */
+      --color-accent-hover: #d6d5d1;   /* hover state */
+      --color-border: #e4e1da;       /* dividers and borders */
+      --color-shadow: rgba(0, 0, 0, 0.06);
+      --radius: 3px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Georgia", "Times New Roman", serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.75;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Header */
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .logo-area {
+      flex: 0 0 120px;
+    }
+
+    .logo {
+      width: 88px;
+      height: 74px;
+    }
+
+    .header-center {
+      flex: 1;
+      text-align: center;
+    }
+
+    .header-center h1 {
+      font-size: 1.4rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-heading);
+      margin-bottom: 0.5rem;
+    }
+
+    .header-center .back-link {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      text-decoration: underline;
+    }
+
+    .header-spacer {
+      flex: 0 0 120px;
+    }
+
+    /* Hero overview */
+    .hero-overview {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      padding: 0 1rem;
+    }
+
+    .hero-overview h2 {
+      font-size: 2.6rem;
+      color: var(--color-heading);
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-overview .author {
+      font-size: 1.2rem;
+      color: var(--color-muted);
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-overview p {
+      max-width: 760px;
+      margin: 0 auto 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    /* Book sections */
+    .book-section {
+      background-color: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 20px var(--color-shadow);
+    }
+
+    .book-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .book-cover {
+      flex: 0 0 220px;
+      max-width: 100%;
+    }
+
+    .cover {
+      width: 100%;
+    }
+
+    .book-content {
+      flex: 1 1 420px;
+    }
+
+    .book-content h3 {
+      font-size: 1.75rem;
+      color: var(--color-heading);
+      margin-bottom: 0.25rem;
+    }
+
+    .book-content .subtitle {
+      font-size: 1.1rem;
+      color: var(--color-muted);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .book-content p {
+      margin-bottom: 1rem;
+    }
+
+    /* Pricing */
+    .pricing {
+      margin-top: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .pricing h4 {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .price-button {
+      display: inline-flex;
+      height: 50px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      min-width: 180px;
+      padding: 0.65rem 1rem;
+      margin: 0 0.5rem 0.5rem 0;
+      font-size: 0.9rem;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+    }
+
+    .price-button .amount {
+      font-family: "Georgia", "Times New Roman", serif;
+    }
+
+    .buy-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      min-width: 180px;
+      padding: 0.65rem 1rem;
+      margin: 0 0.5rem 0.5rem 0;
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+    }
+
+    .buy-button:hover {
+      background-color: var(--color-accent-hover);
+      text-decoration: none !important;
+    }
+
+    .buy-button .format {
+      font-weight: 600;
+      color: var(--color-heading);
+    }
+
+    .buy-button .amount {
+      font-weight: 700;
+    }
+
+    .disabled-wrapper {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      vertical-align: top;
+      margin: 0 0.5rem 0.5rem 0;
+    }
+
+    .disabled-button {
+      background-color: #e5e3dd;
+      border-color: #d0cdc5;
+      color: #8a8a8a;
+      opacity: 0.65;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .disabled-button::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -10%;
+      width: 120%;
+      height: 1px;
+      background-color: #999999;
+      transform: rotate(-14deg);
+      transform-origin: center;
+    }
+
+    .disabled-button .format {
+      font-weight: 600;
+    }
+
+    .disabled-button .amount {
+      font-weight: 700;
+    }
+
+    .coming-soon {
+      display: block;
+      margin: 0 0.6rem 0 0 ;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+
+    /* Details card */
+    .details-card {
+      background-color: var(--color-bg);
+      border: 1px solid var(--color-border);
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius);
+      margin-top: 1rem;
+    }
+
+    .details-card h4 {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .details-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .details-table th,
+    .details-table td {
+      padding: 0.5rem 0;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .details-table th {
+      width: 38%;
+      color: var(--color-muted);
+      font-weight: 500;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    /* Author & review cards */
+    .info-card {
+      background-color: var(--color-card);
+      border: 1px solid var(--color-border);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      border-radius: var(--radius);
+    }
+
+    .info-card h3 {
+      font-size: 1.3rem;
+      color: var(--color-heading);
+      margin-bottom: 1rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: var(--color-text);
+      border-left: 3px solid var(--color-accent);
+      padding-left: 1.25rem;
+      margin: 1rem 0;
+    }
+
+    cite {
+      display: block;
+      margin-top: 1rem;
+      font-style: normal;
+      color: var(--color-muted);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.85rem;
+      color: var(--color-muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+
+      .site-header {
+        flex-wrap: wrap;
+      }
+
+      .logo-area,
+      .header-spacer {
+        flex: 0 0 70px;
+      }
+
+      .logo {
+        width: 60px;
+        height: 40px;
+        font-size: 0.55rem;
+      }
+
+      .header-center h1 {
+        font-size: 1.1rem;
+      }
+
+      .hero-overview h2 {
+        font-size: 2rem;
+      }
+
+      .book-section {
+        padding: 1.5rem;
+      }
+
+      .book-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .book-cover {
+        flex: 0 0 auto;
+        width: 180px;
+      }
+
+      .book-content h3 {
+        font-size: 1.5rem;
+      }
+
+      .price-button,
+      .disabled-wrapper {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header class="site-header">
+    <div class="logo-area">
+      <a href="https://www.klartgallery.com" >
+        <img class="logo" src="KL%20Studio%20LLC%20Logo.jpg" alt="Logo"/>
+      </a>
+    </div>
+    <div class="header-center">
+      <h1>KL Art Gallery</h1>
+      <a href="https://www.klartgallery.com" class="back-link">&larr; Back to Gallery</a>
+    </div>
+    <div class="header-spacer"></div>
+  </header>
+
+  <section class="hero-overview">
+    <h2>In the Hold of Destiny</h2>
+    <p class="author">By K. T. Tran</p>
+    <p>
+      This is not a small story. This is a multi-generational story that recounts the history
+      of Vietnam from its colonial period to modern times. It follows Hòa, an ordinary
+      Vietnamese villager, as she experiences childhood in her village, witnesses the
+      persecution of her family, and struggles through the downfall of the southern
+      Vietnamese government. Through this recounting, this story captures not only her life
+      but also serves as a documentation of vanishing tradition and culture.
+    </p>
+  </section>
+
+  <!-- Book One -->
+  <section class="book-section" id="book-one">
+    <div class="book-layout">
+      <div class="book-cover">
+        <img class="cover" src="Book%20One%20Cover.jpg" alt="Cover" />
+      </div>
+
+      <div class="book-content">
+        <h3>On the Flooded Riverbanks</h3>
+        <p class="subtitle">In the Hold of Destiny Book One</p>
+        <p>
+          As the first book in this two-part series, <em>On the Flooded Riverbanks</em> focuses on Hòa's early life. What begins as peaceful rural living quickly vanishes as Hòa is thrust into the reality of politics during the First Indochina War when the North Vietnamese government begins its campaign to eliminate landowners.
+        </p>
+
+        <div class="pricing">
+          <h4>Pricing</h4>
+          <a href="#" class="price-button buy-button">
+            <span class="format">Paperback</span>
+            <span class="amount">$19</span>
+          </a>
+          <div class="disabled-wrapper">
+            <button class="price-button disabled-button" disabled>
+              <span class="format">Hardback</span>
+              <span class="amount">$30</span>
+            </button>
+            <span class="coming-soon">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-card">
+      <h4>Product Details</h4>
+      <table class="details-table">
+        <tr>
+          <th>Paperback ISBN</th>
+          <td>979-8-9971856-1-9</td>
+        </tr>
+        <tr>
+          <th>Hardback ISBN</th>
+          <td>979-8-9971856-0-2</td>
+        </tr>
+        <tr>
+          <th>Page Count</th>
+          <td>582</td>
+        </tr>
+        <tr>
+          <th>Paperback Dimensions</th>
+          <td>6 in (w) x 9 in (h) x 1.46 in (d)</td>
+        </tr>
+        <tr>
+          <th>Hardback Dimensions</th>
+          <td>6.44 in (w) x 9.25 in (h) x 1.44 in (d)</td>
+        </tr>
+        <tr>
+          <th>Genre</th>
+          <td>Historical Fiction</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- Book Two -->
+  <section class="book-section" id="book-two">
+    <div class="book-layout">
+      <div class="book-cover">
+        <img class="cover" src="Book%20Two%20Cover.jpg" alt="Cover" />
+      </div>
+
+      <div class="book-content">
+        <h3>Written by the Stars</h3>
+        <p class="subtitle">In the Hold of Destiny Book Two</p>
+        <p>
+          This is the second book in this two-part series. Hòa and her family have just escaped their village. Now refugees, they must navigate the increasingly turbulent landscape as the Vietnam War begins to spread across the country.
+        </p>
+
+        <div class="pricing">
+          <h4>Pricing</h4>
+          <a href="#" class="price-button buy-button">
+            <span class="format">Paperback</span>
+            <span class="amount">$16</span>
+          </a>
+          <div class="disabled-wrapper">
+            <button class="price-button disabled-button" disabled>
+              <span class="format">Hardback</span>
+              <span class="amount">$26</span>
+            </button>
+            <span class="coming-soon">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="details-card">
+      <h4>Product Details</h4>
+      <table class="details-table">
+        <tr>
+          <th>Paperback ISBN</th>
+          <td>979-8-9971856-4-0</td>
+        </tr>
+        <tr>
+          <th>Hardback ISBN</th>
+          <td>979-8-9971856-3-3</td>
+        </tr>
+        <tr>
+          <th>Page Count</th>
+          <td>402</td>
+        </tr>
+        <tr>
+          <th>Paperback Dimensions</th>
+          <td>6 in (w) x 9 in (h) x 1.01 in (d)</td>
+        </tr>
+        <tr>
+          <th>Hardback Dimensions</th>
+          <td>6.44 in (w) x 9.25 in (h) x 1.06 in (d)</td>
+        </tr>
+        <tr>
+          <th>Genre</th>
+          <td>Historical Fiction</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <section class="info-card">
+    <h3>About the Author</h3>
+    <p>
+      K.T. Tran is a Vietnamese immigrant and self-taught artist. What had started as a
+      promise to her late mother became a decade-long project to record and assemble the
+      story of her parents and Vietnam's history through their lens. This is her first foray into
+      the world of book writing.
+    </p>
+  </section>
+
+  <section class="info-card">
+    <h3>Praise for the Series</h3>
+    <blockquote>
+      "This set of books is a beautifully woven tale comprised of both memoir and historical
+      text, rich with the culture, folklore, and sentiments of people at the time. It gives history
+      from the perspective that I consider most important—not from those with names listed in
+      the history books, but through the eyes of the unnamed people whose lives were most
+      impacted."
+    </blockquote>
+    <p>
+      "We follow the main character, Hòa, through the decades—from simple rural life to the
+      ongoing repercussions of war. We see the resilience of everyday people just trying to
+      live their lives against the constant backdrop of political turmoil, yet also we experience
+      the mundaneness of death when tragedy is around every corner. The cumulative
+      experiences of Hòa's life are extraordinary, and if I did not know for a fact that these
+      narratives are accurate to her first-person account, I would never believe this life story
+      to be true. At its root, this is a story of sacrifice—the kind that is intrinsic to your soul,
+      that you choose to make every day, every year, fueled by the glimmer of hope that your
+      loved ones will have a better tomorrow."
+    </p>
+    <cite>— Dr. Nancy Nguyen, Hòa's Granddaughter</cite>
+  </section>
+
+  <footer class="site-footer">
+    &copy; <span id="year"></span> KL Studio LLC. All rights reserved.
+  </footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
